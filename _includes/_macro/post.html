@@ -115,17 +115,7 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if site.duoshuo_shortname or site.duoshuo and site.duoshuo.shortname %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.facebook_comments_plugin.enable %}
+            {% if site.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
@@ -135,64 +125,6 @@
                   <span class="post-comments-count fb-comments-count" data-href="{{ post.url | absolute_url }}" itemprop="commentCount">0</span> comments
                 </a>
               </span>
-            {% elsif site.disqus.enable and site.disqus.count %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="{{ post.url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.wildfire.enable %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count wf-count-unit" wf-page-url="{{ post.url | absolute_url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.hypercomments_id %}
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="{{ post.url }}" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            {% elsif post.layout == 'post' and site.gentie_productKey %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a class="cloud-tie-join-count" href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.changyan.enable and site.changyan.appid and site.changyan.appkey %}
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              {% if post.layout == 'post' %}
-                <a href="{{ post.url | relative_url }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.url }}" itemprop="commentsCount"></span>
-                </a>
-              {% else %}
-                <a href="{{ post.url | relative_url }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::{{ post.url | absolute_url }}" class="cy_cmt_count" data-xid="{{ post.url }}" itemprop="commentsCount" ></span>
-                </a>
-              {% endif %}
             {% endif %}
           {% endif %}
 
