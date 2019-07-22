@@ -511,6 +511,29 @@
 
           </div>
           
+  <form method="POST" action="https://staticman3.herokuapp.com/v3/entry/github/victorfeight/unexists_store/master/comments">
+      <input name="options[redirect]" type="hidden" value="http://localhost:4000">
+      <input name="options[slug]" type="hidden" value="test-slug">
+      <label>Name: <input name="fields[name]" type="text"></label><br>
+      <label>Email: <input name="fields[email]" type="email"></label><br>
+      <label>Message: <br><textarea name="fields[message]" rows="12" cols="36"></textarea></label><br>
+      <input type="submit" value="Submit">
+  </form>
+  <div class="comments">
+  <h3>Comments</h3>
+  
+  
+    
+    <article class="comment">
+      <h4 class="comment-name">Test user</h4>
+      <p class="comment-time">Sep 29, 2018 03:10:04</p>
+      <div class="comment-msg">
+        <p>Test message</p>
+
+      </div>
+    </article>
+  
+</div>
   <div class="comments" id="comments">
     
   </div>
