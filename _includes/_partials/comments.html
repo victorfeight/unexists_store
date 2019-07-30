@@ -1,13 +1,18 @@
 {% if page.comments %}
-  <form method="POST" action="{{ site.staticman.api }}">
-      <input name="options[redirect]" type="hidden" value="{{ site.url }}">
-      <input name="options[slug]" type="hidden" value="test-slug">
-      <label>Name: <input name="fields[name]" type="text"></label><br>
-      <label>Email: <input name="fields[email]" type="email"></label><br>
-      <label>Message: <br><textarea name="fields[message]" rows="12" cols="36"></textarea></label><br>
-      <input type="submit" value="Submit">
+  <!-- Notice the action url that tells Staticman where to send the POST data -->
+  <form method="POST"
+        action="{{ site.staticman.api }}">
+      <!-- The review will be associated with the current product -->
+      <input name="fields[blog]" type="hidden" value="{{ page.slug }}" />
+      <!-- with options[redirect], our visitor will come back to our website when submitting a review -->
+      <input name="options[redirect]" type="hidden" value="{{site.url}}{{site.baseurl}}{{ page.url }}" />
+
+      <h4>Add a Comment</h4>
+      <!-- and finally the user visible fields -->
+      <p><label>Your name: <input type="text" name="fields[name]" /></label></p>
+      <p><label>Comment: <input type="text" name="fields[comment]" /></label></p>
+      <p><button type="submit">Submit Comment</button></p>
   </form>
-  {% include comments.html %}
   <div class="comments" id="comments">
     {% if site.facebook_sdk.enable and site.facebook_comments_plugin.enable %}
       <div class="fb-comments"

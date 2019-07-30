@@ -1,8 +1,17 @@
-
 <div id="posts" class="posts-expand">
   {% assign post = page %}
   {% include _macro/post.html %}
   <div class="post-spread">
+    {% include _partials/comments.html %}
+    {% assign comments = site.data.comments | where:'blog',page.slug %} 
+    <div class="comments">
+        <h3>Comments</h3>
+        {% for comment in comments reversed %}
+        <li>
+            <p><b>{{ comment.comment }}/5</b>  by <b>{{ comment.name }}</b> on <i>{{ comment.date | date: '%B %d, %Y' }}</i></p>
+        </li>
+        {% endfor %}
+    </div>
     {% if site.jiathis %}
       {% include _partials/share/jiathis.html %}
     {% elsif site.baidushare %}
