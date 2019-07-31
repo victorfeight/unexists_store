@@ -13,7 +13,7 @@
 <lastmod>2013-12-24T15:30:04-08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/foo/bar/baz/2013/12/24/cat.html</loc>
+<loc>http://localhost:4000/foo/bar/baz/2013/12/24/categories.html</loc>
 <lastmod>2013-12-24T15:30:09-08:00</lastmod>
 </url>
 <url>
@@ -61,7 +61,7 @@
 <lastmod>2017-07-20T00:00:00-07:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2019/07/30/cat.html</loc>
+<loc>http://localhost:4000/2019/07/30/test.html</loc>
 <lastmod>2019-07-30T00:00:00-07:00</lastmod>
 </url>
 <url>

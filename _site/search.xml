@@ -3,7 +3,7 @@
   
     <entry>
       <title><![CDATA[Testing Shit]]></title>
-      <url>/2019/07/30/cat.html</url>
+      <url>/2019/07/30/test.html</url>
       <content type="text"><![CDATA[Testing comments]]></content>
       <categories>
         
@@ -181,7 +181,7 @@
   
     <entry>
       <title><![CDATA[Categories]]></title>
-      <url>/foo/bar/baz/2013/12/24/cat.html</url>
+      <url>/foo/bar/baz/2013/12/24/categories.html</url>
       <content type="text"><![CDATA[This post contains 3 categories. Make sure your theme can display all of the categories.]]></content>
       <categories>
         

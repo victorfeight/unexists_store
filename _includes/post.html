@@ -20,7 +20,7 @@
     <ul>
       {% for comment in comments %}
       <li>
-        <b>{{ comment.name }}</b> on <i>{{ review.date | date: '%B %d, %Y' }}</i>
+        <b>{{ comment.name }}</b> on <i>{{ comment.date | date: '%B %d, %Y' }}</i>
         <p>
           {{comment.message}}
         </p>
