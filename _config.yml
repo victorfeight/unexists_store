@@ -11,7 +11,6 @@ markdown: kramdown
 github_username:  victorfeight
 staticman:
   api: "https://staticman3.herokuapp.com/v3/entry/github/victorfeight/unexists_store/master/comments"
-  path: "_data/comments/test-slug"
 
 # Site
 title: NexT
@@ -26,7 +25,7 @@ date_format: '%Y-%m-%d'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url: 'https://github.com/victorfeight/unexists_store'
 baseurl:
-permalink: /blog/:slug:output_ext
+#permalink: /blog/:slug:output_ext
 
 # Pagination
 paginate: 10

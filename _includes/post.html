@@ -1,17 +1,35 @@
 <div id="posts" class="posts-expand">
   {% assign post = page %}
   {% include _macro/post.html %}
+  <div class="blog-comments">
+    {% assign comments = site.data.comments | where:'blog',page.slug %}
+    <form method="POST" action="{{ site.staticman.api }}">
+      <!-- The review will be associated with the current product -->
+      <input name="fields[blog]" type="hidden" value="{{ page.slug }}" />
+      <!-- with options[redirect], our visitor will come back to our website when submitting a review -->
+      <input name="options[redirect]" type="hidden" value="{{ site.url }}" />
+  
+      <h4>Add a Comment</h4>
+      <!-- and finally the user visible fields -->
+      <p><label>Your name: <input type="text" name="fields[name]" /></label></p>
+      <p><label>e-mail: <input type="text" name="fields[email]" /></label></p>
+      <p><label>Comment: <br><textarea name="fields[message]" rows="8" cols="40" /></textarea></label><br></p>
+      <p><button type="submit">Submit Comment</button></p>
+    </form>
+    <h3>Comments</h3>
+    <ul>
+      {% for comment in comments %}
+      <li>
+        <b>{{ comment.name }}</b> on <i>{{ review.date | date: '%B %d, %Y' }}</i>
+        <p>
+          {{comment.message}}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
   <div class="post-spread">
     {% include _partials/comments.html %}
-    {% assign comments = site.data.comments | where:'blog',page.slug %} 
-    <div class="comments">
-        <h3>Comments</h3>
-        {% for comment in comments reversed %}
-        <li>
-            <p><b>{{ comment.comment }}/5</b>  by <b>{{ comment.name }}</b> on <i>{{ comment.date | date: '%B %d, %Y' }}</i></p>
-        </li>
-        {% endfor %}
-    </div>
     {% if site.jiathis %}
       {% include _partials/share/jiathis.html %}
     {% elsif site.baidushare %}
