@@ -394,13 +394,6 @@ gitalk:
   owner: # colingpt
   admin: # colingpt
 
-# Baidu Share
-# Available value:
-#    button | slide
-# Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
-
 # Share
 #jiathis:
 # Warning: JiaThis does not support https.
