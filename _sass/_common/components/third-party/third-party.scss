@@ -3,7 +3,3 @@
 @import "baidushare";
 @import "localsearch";
 @import "busuanzi-counter";
-@import "algolia-search";
-@if jekyll-config('algolia_search.enable') {
-  @include algolia-search;
-}
